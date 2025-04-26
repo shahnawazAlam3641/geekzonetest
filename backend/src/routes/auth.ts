@@ -94,7 +94,7 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production" ? true : false,
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "Lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     });
 
@@ -158,7 +158,7 @@ router.post("/login", async (req: Request, res: Response): Promise<void> => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production" ? true : false,
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "Lax",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     });
 
